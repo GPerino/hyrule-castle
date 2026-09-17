@@ -4,35 +4,32 @@
 RPG game turn based, where you have to defeat the enemies to get to the next level.
 Defeat the boss to win the game.
 
-The game is inspired by the Zelda Universe.
-```bash
+The game is inspired by the Game Zelda Ocarina of time.
+
 ## Installation
 ```bash
-$ git clone https://github.com/coderangel117/hyrule-castle.git
+$ git clone https://github.com/GPerino/hyrule-castle.git
 $ cd hyrule-castle
-$ pip3 install -r requirements.txt
+$ pip3 install pick
 ```
 
 ## Usage
+
 ```bash
 $ python -m base_game.main
 ```
 ## Next Features
 - [x] Title screen
+- [x] Character creation
 - [ ] Options
 - [ ] Music
-- [ ] 4VS4 battle
 - [ ] Difficulty levels
-- [ ] Character creation
 - [ ] Save / Load game
 - [ ] Handle user Exit
-- [ ] Spells
-- [ ] Levels
 - [ ] Inventory
 - [ ] Escape from the battle
 - [ ] Chest loot
-- [ ] Add more enemies
 
 ## Author
-- [Gabriel PERINO](https://github.com/coderangel117)
-- [GitHub](https://github.com/coderangel117/hyrule-castle)
+- [Gabriel PERINO](https://github.com/GPerino)
+- [GitHub](https://github.com/GPerino/hyrule-castle)
