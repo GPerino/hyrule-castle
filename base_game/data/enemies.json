@@ -1,96 +1,15 @@
 [
   {
     "id": 1,
-    "name": "Dead Hand",
-    "hp": 80,
+    "name": "Deku Baba",
+    "hp": 60,
     "str_": 10,
-    "def_": 5,
-    "spd": 8,
+    "def_": 4,
+    "spd": 6,
     "luck": 5
   },
   {
     "id": 2,
-    "name": "Lynel",
-    "hp": 120,
-    "str_": 15,
-    "def_": 5,
-    "spd": 9,
-    "luck": 5
-  },
-  {
-    "id": 3,
-    "name": "Stalfos",
-    "hp": 100,
-    "str_": 14,
-    "def_": 6,
-    "spd": 9,
-    "luck": 5
-  },
-  {
-    "id": 4,
-    "name": "Darknuts",
-    "hp": 90,
-    "str_": 12,
-    "def_": 7,
-    "spd": 10,
-    "luck": 5
-  },
-  {
-    "id": 5,
-    "name": "Guardian",
-    "hp": 150,
-    "str_": 12,
-    "def_": 8,
-    "spd": 9,
-    "luck": 5
-  },
-  {
-    "id": 6,
-    "name": "Lizalfos",
-    "hp": 80,
-    "str_": 14,
-    "def_": 5,
-    "spd": 6,
-    "luck": 5
-  },
-  {
-    "id": 7,
-    "name": "Skulltula",
-    "hp": 60,
-    "str_": 12,
-    "def_": 4,
-    "spd": 6,
-    "luck": 5
-  },
-  {
-    "id": 8,
-    "name": "Golden Skulltula",
-    "hp": 100,
-    "str_": 16,
-    "def_": 7,
-    "res": 4,
-    "spd": 8,
-    "luck": 5
-  },
-  {
-    "id": 9,
-    "name": "Gibdo",
-    "hp": 60,
-    "str_": 12,
-    "def_": 4,
-    "spd": 8
-  },
-  {
-    "id": 10,
-    "name": "Octorock",
-    "hp": 70,
-    "str_": 10,
-    "def_": 5,
-    "spd": 9,
-    "luck": 5
-  },
-  {
-    "id": 11,
     "name": "Deku Scrub",
     "hp": 60,
     "str_": 10,
@@ -99,12 +18,183 @@
     "luck": 5
   },
   {
+    "id": 3,
+    "name": "Skulltula",
+    "hp": 60,
+    "str_": 12,
+    "def_": 4,
+    "spd": 6,
+    "luck": 5
+  },
+  {
+    "id": 4,
+    "name": "Skullwalltula",
+    "hp": 55,
+    "str_": 11,
+    "def_": 4,
+    "spd": 7,
+    "luck": 5
+  },
+  {
+    "id": 5,
+    "name": "Keese",
+    "hp": 50,
+    "str_": 9,
+    "def_": 3,
+    "spd": 11,
+    "luck": 5
+  },
+  {
+    "id": 6,
+    "name": "Fire Keese",
+    "hp": 60,
+    "str_": 12,
+    "def_": 4,
+    "spd": 11,
+    "luck": 5
+  },
+  {
+    "id": 7,
+    "name": "Gohma Larva",
+    "hp": 45,
+    "str_": 10,
+    "def_": 3,
+    "spd": 9,
+    "luck": 5
+  },
+  {
+    "id": 8,
+    "name": "Dodongo",
+    "hp": 100,
+    "str_": 16,
+    "def_": 7,
+    "spd": 4,
+    "luck": 5
+  },
+  {
+    "id": 9,
+    "name": "Lizalfos",
+    "hp": 80,
+    "str_": 14,
+    "def_": 5,
+    "spd": 9,
+    "luck": 5
+  },
+  {
+    "id": 10,
+    "name": "Armos",
+    "hp": 90,
+    "str_": 15,
+    "def_": 8,
+    "spd": 6,
+    "luck": 5
+  },
+  {
+    "id": 11,
+    "name": "Stalfos",
+    "hp": 120,
+    "str_": 17,
+    "def_": 7,
+    "spd": 8,
+    "luck": 5
+  },
+  {
     "id": 12,
-    "name": "Bokoblin",
-    "hp": 70,
+    "name": "Wolfos",
+    "hp": 90,
+    "str_": 15,
+    "def_": 6,
+    "spd": 10,
+    "luck": 5
+  },
+  {
+    "id": 13,
+    "name": "Anubis",
+    "hp": 100,
     "str_": 14,
     "def_": 5,
     "spd": 7,
+    "luck": 5
+  },
+  {
+    "id": 14,
+    "name": "Torch Slug",
+    "hp": 100,
+    "str_": 15,
+    "def_": 7,
+    "spd": 4,
+    "luck": 5
+  },
+  {
+    "id": 15,
+    "name": "Flare Dancer",
+    "hp": 150,
+    "str_": 18,
+    "def_": 8,
+    "spd": 9,
+    "luck": 5
+  },
+  {
+    "id": 16,
+    "name": "Shell Blade",
+    "hp": 90,
+    "str_": 14,
+    "def_": 7,
+    "spd": 7,
+    "luck": 5
+  },
+  {
+    "id": 17,
+    "name": "Spike",
+    "hp": 80,
+    "str_": 15,
+    "def_": 8,
+    "spd": 6,
+    "luck": 5
+  },
+  {
+    "id": 18,
+    "name": "Dead Hand",
+    "hp": 160,
+    "str_": 18,
+    "def_": 8,
+    "spd": 3,
+    "luck": 5
+  },
+  {
+    "id": 19,
+    "name": "ReDead",
+    "hp": 120,
+    "str_": 16,
+    "def_": 7,
+    "spd": 3,
+    "luck": 5
+  },
+  {
+    "id": 20,
+    "name": "Beamos",
+    "hp": 100,
+    "str_": 17,
+    "def_": 9,
+    "spd": 2,
+    "luck": 5
+  },
+  {
+    "id": 21,
+    "name": "Like Like",
+    "hp": 130,
+    "str_": 15,
+    "def_": 8,
+    "spd": 4,
+    "luck": 5
+  },
+  {
+    "id": 22,
+    "name": "Iron Knuckle",
+    "hp": 220,
+    "str_": 25,
+    "def_": 12,
+    "spd": 3,
     "luck": 5
   }
 ]

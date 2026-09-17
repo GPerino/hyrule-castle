@@ -1,7 +1,16 @@
 [
   {
     "id": 1,
-    "name": "Ganon",
+    "name": "Queen Gohma",
+    "hp": 250,
+    "str_": 16,
+    "def_": 10,
+    "spd": 6,
+    "luck": 0
+  },
+  {
+    "id": 2,
+    "name": "King Dodongo",
     "hp": 300,
     "str_": 18,
     "def_": 10,
@@ -9,16 +18,25 @@
     "luck": 0
   },
   {
-    "id": 2,
-    "name": "Gleeoks",
+    "id": 3,
+    "name": "Barinade",
     "hp": 300,
     "str_": 20,
-    "def_": 10,
-    "spd": 6,
+    "def_": 8,
+    "spd": 8,
     "luck": 0
   },
   {
-    "id": 3,
+    "id": 4,
+    "name": "Phantom Ganon",
+    "hp": 300,
+    "str_": 18,
+    "def_": 10,
+    "spd": 7,
+    "luck": 0
+  },
+  {
+    "id": 5,
     "name": "Volvagia",
     "hp": 350,
     "str_": 18,
@@ -27,38 +45,38 @@
     "luck": 0
   },
   {
-    "id": 4,
-    "name": "Onox",
-    "hp": 400,
-    "str_": 20,
-    "def_": 12,
-    "spd": 6,
-    "luck": 0
-  },
-  {
-    "id": 5,
-    "name": "Odolwa",
-    "hp": 350,
-    "str_": 15,
-    "def_": 10,
-    "spd": 5,
-    "luck": 0
-  },
-  {
     "id": 6,
-    "name": "Stallord",
-    "hp": 300,
-    "str_": 20,
+    "name": "Morpha",
+    "hp": 350,
+    "str_": 17,
     "def_": 8,
-    "spd": 4,
+    "spd": 7,
     "luck": 0
   },
   {
     "id": 7,
-    "name": "Gohma",
-    "hp": 250,
-    "str_": 16,
+    "name": "Bongo Bongo",
+    "hp": 400,
+    "str_": 20,
+    "def_": 9,
+    "spd": 8,
+    "luck": 0
+  },
+  {
+    "id": 8,
+    "name": "Twinrova",
+    "hp": 400,
+    "str_": 19,
     "def_": 10,
+    "spd": 7,
+    "luck": 0
+  },
+  {
+    "id": 9,
+    "name": "Ganondorf",
+    "hp": 450,
+    "str_": 22,
+    "def_": 12,
     "spd": 6,
     "luck": 0
   }
