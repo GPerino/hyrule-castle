@@ -1,10 +1,10 @@
 from collections import namedtuple
 
-from base_game.classes.Player import Player
 from base_game.classes.Character_manager import CharacterManager
 from base_game.classes.Dungeon_manager import DungeonManager
+from base_game.classes.Player import Player
 from base_game.classes.Settings import GameSettings
-from base_game.utils import clear_screen, show_intro
+from base_game.utils import clear_screen, show_intro, display_character_card
 
 
 class Game:
@@ -46,9 +46,9 @@ class Game:
         selected_index = 0
         while True:
             stdscr.clear()
-            stdscr.addstr(start_y -2, start_x + 4, f"Choisissez votre personnage")
+            stdscr.addstr(start_y - 2, start_x + 4, f"Choisissez votre personnage")
             stdscr.refresh()
-            self.manager.display_player_card(stdscr, players[selected_index], start_y, start_x)
+            display_character_card(stdscr, players[selected_index], start_y, start_x)
             key = stdscr.getkey()
             if key == "KEY_UP":
                 selected_index = (selected_index - 1) % len(players)
@@ -57,15 +57,14 @@ class Game:
             elif key == "\n":
                 return players[selected_index]
 
-
     def start(self, stdscr):
         self.intro(stdscr)
         clear_screen(stdscr)
         stdscr.addstr(10, 65, f"Choisissez votre personnage")
         stdscr.refresh()
-        Player = namedtuple("Player", "id, name, hp, str_, def_, spd, luck")
+        PlayerTuple = namedtuple("Player", "id, name, hp, str_, def_, spd, luck")
         data = self.choose_character(stdscr)
-        self.player = Player(**data)
+        self.player = PlayerTuple(**data)
         stdscr.clear()
         stdscr.addstr(4, 65, f"Vous incarnez {self.player.name}")
         stdscr.addstr(6, 65, f"Appuyer pour continuer")

@@ -15,7 +15,7 @@ class Character:
         print("{} a {} points de vie restants".format(self.name, self.hp))
 
     def take_damage(self, damage):
-        final_damage = damage - self.def_
+        final_damage = damage - self.defense
         self.hp -= final_damage
 
     def reload_health(self):

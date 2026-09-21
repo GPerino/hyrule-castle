@@ -1,5 +1,6 @@
 import subprocess
 
+
 class AudioManager:
     def __init__(self, tracks: dict[str, str]):
         self.tracks = tracks

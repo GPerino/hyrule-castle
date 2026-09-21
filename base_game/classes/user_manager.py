@@ -3,6 +3,7 @@ import json
 import os
 
 import User
+from ..utils import check_special_characters
 
 
 def get_all_users():
@@ -20,7 +21,6 @@ def get_all_users():
         else:
             new_user("invite")
     return users
-    # Parcours du fichier users.json
 
 
 def get_user_files():
@@ -240,7 +240,7 @@ def users_menu():
         [6] - Display user info
         [7] - return to main menu
         """)
-        if not utils.check_special_characters(manage_choice):
+        if not check_special_characters(manage_choice):
             manage_choice = 0
         manage_choice = int(manage_choice)
     if manage_choice == 1:
