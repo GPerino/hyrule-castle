@@ -2,10 +2,12 @@ import curses
 
 from pick import pick
 
-
 class OptionsMenu:
+    def __init__(self, settings):
+        self.settings = settings
+
+
     def show(self, stdscr):
-        stdscr.clear()
         options = ["Changer la difficulté", "Retourner au menu principal"]
         _, choice = pick(options, screen=stdscr)
         stdscr.refresh()
@@ -16,7 +18,9 @@ class OptionsMenu:
             level, choice = pick(options, title, screen=stdscr)
             stdscr.refresh()
             stdscr.addstr("Vous jouez maintenant en difficulté {}".format(level))
+
             stdscr.refresh()
             curses.napms(1000)
             stdscr.clear()
-        return "back"
+        elif choice == 1:
+            return "back"
