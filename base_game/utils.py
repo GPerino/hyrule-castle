@@ -1,3 +1,4 @@
+import curses
 import os
 import re
 import sys
@@ -39,6 +40,25 @@ def typewriter_effect(text):
         time.sleep(0.1)  # Pause entre chaque lettre
     print()
 
+def show_intro(self, stdscr, lines, title=None, delay_ms=0):
+        clear_screen(stdscr)
+        h, w = stdscr.getmaxyx()
+        block = []
+        if title:
+            block.append(title)
+            block.append("")
+        block.extend(lines)
+        block.append("")
+        block.append("Appuie sur une touche pour continuer…")
+        y = max(0, (h - len(block)) // 2)
+        for i, line in enumerate(block):
+            x = max(0, (w - len(line)) // 2)
+            stdscr.addstr(y + i, x, line)
+            stdscr.refresh()
+            if delay_ms > 0:
+                curses.napms(delay_ms)
+        stdscr.getch()
+
 
 def handle_exit():
     print("\nSaving your progress...")
@@ -49,6 +69,5 @@ def handle_exit():
 
 def clear_screen(stdscr):
     """Clear the screen."""
-    for i in range(0, 15):
-        stdscr.move(i, 0)
-        stdscr.clrtoeol()
+    stdscr.clear()
+    stdscr.refresh()

@@ -4,23 +4,21 @@ import os
 from .Boss import Boss
 from .Enemy import Enemy
 from .Player import Player
-from ..menus.settings import GameSettings
+from base_game.classes.Settings import GameSettings
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class CharacterManager:
     """Manage character selection for player, enemies, and bosses."""
-    settings = GameSettings()
 
-    def __init__(self, level="normal"):
+    def __init__(self):
         self.rarity_weights = [0, 50, 30, 15, 4, 1]
         self.player = Player("", 0, 0, 0, 0, 0)
         self.players = []
         self.enemy = Enemy("", 0, 0, 0, 0, 0)
         self.boss = Boss("", 0, 0, 0, 0, 0)
-        self.level = level
-        self.difficulty = self.settings.difficulty
+
 
     def get_players(self):
         with open("/srv/http/hyrule-castle/base_game/data/players.json") as f:
@@ -28,14 +26,6 @@ class CharacterManager:
             for player in data:
                 self.players.append(player)
         return self.players
-
-    def get_level(self):
-        """Get the level of the game."""
-        return self.level
-
-    def set_level(self, level):
-        """Set the level of the game."""
-        self.level = level
 
     def hp_to_hearts(self, hp: int, per_heart: int = 10, max_hearts: int = 15) -> str:
         hearts = int(round(hp / per_heart))

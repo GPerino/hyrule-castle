@@ -1,41 +1,23 @@
-import curses
 from collections import namedtuple
 
 from base_game.classes.Player import Player
-from base_game.classes.character_manager import CharacterManager
-from base_game.menus.settings import GameSettings
-from base_game.utils import clear_screen
+from base_game.classes.Character_manager import CharacterManager
+from base_game.classes.Dungeon_manager import DungeonManager
+from base_game.classes.Settings import GameSettings
+from base_game.utils import clear_screen, show_intro
 
 
 class Game:
 
     def __init__(self, audio):
+        self.mode = "History"
+        self.difficulty = "Normal"
         self.settings = GameSettings()
         self.manager = CharacterManager()
+        self.dungeon_manager = DungeonManager()
         self.audio = audio
         self.is_running = False
         self.player = Player("", 0, 0, 0, 0, 0)
-
-    def show_intro(self, stdscr, lines, title=None, delay_ms=0):
-        clear_screen(stdscr)
-        h, w = stdscr.getmaxyx()
-        block = []
-        if title:
-            block.append(title)
-            block.append("")
-        block.extend(lines)
-        block.append("")
-        block.append("Appuie sur une touche pour continuer…")
-
-        y = max(0, (h - len(block)) // 2)
-
-        for i, line in enumerate(block):
-            x = max(0, (w - len(line)) // 2)
-            stdscr.addstr(y + i, x, line)
-            stdscr.refresh()
-            if delay_ms > 0:
-                curses.napms(delay_ms)
-        stdscr.getch()
 
     def intro(self, stdscr):
         self.audio.play("menu")
@@ -53,7 +35,7 @@ class Game:
             "Bonne chance, héros.",
         ]
         clear_screen(stdscr)
-        self.show_intro(stdscr, lines, delay_ms=120)
+        show_intro(stdscr, lines, delay_ms=120)
         self.audio.stop()
 
     def choose_character(self, stdscr):
