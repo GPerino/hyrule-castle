@@ -256,7 +256,7 @@ def users_menu():
                 input(
                     f"This user exist in the list\n"
                     f"Would you realize an action on this user ?\n"
-                    f"1 - Go user's stats\n"
+                    f"1 - See user's stats\n"
                     f"2 - Update this user\n"
                     f"3 - Delete this user\n"
                     f"4 - Return to the previous menu\n"
@@ -317,3 +317,4 @@ def users_menu():
         get_user_info(username)
     if manage_choice == 7:
         return "main"
+    return None

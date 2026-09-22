@@ -38,24 +38,6 @@ class Game:
         show_intro(stdscr, lines, delay_ms=120)
         self.audio.stop()
 
-    def choose_character(self, stdscr):
-        players = self.manager.get_players()
-        screen_h, screen_w = stdscr.getmaxyx()
-        start_y = (screen_h // 2) - (10 // 2)
-        start_x = (screen_w // 2) - (35 // 2)
-        selected_index = 0
-        while True:
-            stdscr.clear()
-            stdscr.addstr(start_y - 2, start_x + 4, f"Choisissez votre personnage")
-            stdscr.refresh()
-            display_character_card(stdscr, players[selected_index], start_y, start_x)
-            key = stdscr.getkey()
-            if key == "KEY_UP":
-                selected_index = (selected_index - 1) % len(players)
-            elif key == "KEY_DOWN":
-                selected_index = (selected_index + 1) % len(players)
-            elif key == "\n":
-                return players[selected_index]
 
     def start(self, stdscr):
         self.intro(stdscr)

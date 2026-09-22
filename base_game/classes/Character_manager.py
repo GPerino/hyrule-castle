@@ -14,13 +14,13 @@ class CharacterManager:
     def __init__(self):
         self.rarity_weights = [0, 50, 30, 15, 4, 1]
         self.player = Player("", 0, 0, 0, 0, 0)
-        self.players = []
+        self.characters_available = []
         self.enemy = Enemy("", 0, 0, 0, 0, 0)
         self.boss = Boss("", 0, 0, 0, 0, 0)
 
-    def get_players(self):
-        with open("/srv/http/hyrule-castle/base_game/data/players.json") as f:
+    def get_characters(self):
+        with open("/base_game/data/characters.json") as f:
             data = json.load(f)
             for player in data:
-                self.players.append(player)
-        return self.players
+                self.characters_available.append(player)
+        return self.characters_available
