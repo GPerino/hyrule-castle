@@ -1,23 +1,20 @@
 from collections import namedtuple
 
-from base_game.classes.Character_manager import CharacterManager
 from base_game.classes.Dungeon_manager import DungeonManager
-from base_game.classes.Player import Player
 from base_game.classes.Settings import GameSettings
-from base_game.utils import clear_screen, show_intro, display_character_card
+from base_game.utils import clear_screen, show_intro, choose_character
 
 
 class Game:
 
-    def __init__(self, audio):
-        self.mode = "History"
-        self.difficulty = "Normal"
+    def __init__(self, audio, mode, difficulty, player):
+        self.mode = mode
+        self.difficulty = difficulty
         self.settings = GameSettings()
-        self.manager = CharacterManager()
+        self.player = player
         self.dungeon_manager = DungeonManager()
         self.audio = audio
         self.is_running = False
-        self.player = Player("", 0, 0, 0, 0, 0)
 
     def intro(self, stdscr):
         self.audio.play("menu")
@@ -42,12 +39,8 @@ class Game:
     def start(self, stdscr):
         self.intro(stdscr)
         clear_screen(stdscr)
-        stdscr.addstr(10, 65, f"Choisissez votre personnage")
-        stdscr.refresh()
         PlayerTuple = namedtuple("Player", "id, name, hp, str_, def_, spd, luck")
-        data = self.choose_character(stdscr)
-        self.player = PlayerTuple(**data)
-        stdscr.clear()
+        self.player = PlayerTuple(**self.player)
         stdscr.addstr(4, 65, f"Vous incarnez {self.player.name}")
         stdscr.addstr(6, 65, f"Appuyer pour continuer")
         stdscr.refresh()

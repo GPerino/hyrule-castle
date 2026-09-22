@@ -1,4 +1,4 @@
-from .Character import Character
+from base_game.classes.Character import Character
 
 
 class Boss(Character):

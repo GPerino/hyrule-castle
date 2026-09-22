@@ -1,7 +1,7 @@
 import curses
 import time
 
-from base_game.classes.AudioManager import AudioManager
+from base_game.classes.audio_manager import AudioManager
 from base_game.menus.main_menu import MainMenu
 from base_game.utils import display_ascii_art, handle_exit, typewriter_effect
 

@@ -4,6 +4,10 @@ import re
 import sys
 import time
 
+from pick import pick
+
+from base_game.classes.Character_manager import CharacterManager
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -61,6 +65,44 @@ def show_intro(stdscr, lines=None, title=None, delay_ms=0):
         if delay_ms > 0:
             curses.napms(delay_ms)
     stdscr.getch()
+
+
+def choose_difficulty(stdscr):
+    stdscr.clear()
+    title = "Choisissez la difficulté"
+    options = ["Facile", "Normal", "Hardcore"]
+    level, _ = pick(options, title, screen=stdscr)
+    return level
+
+
+def choose_game_mode(stdscr):
+    stdscr.clear()
+    title = "Choisissez le mode de jeu"
+    options = ["Histoire", "Difficile", "Aléatoire"]
+    # @TODO Afficher détails des options
+    mode, index = pick(options, title, screen=stdscr)
+    return mode
+
+
+def choose_character(stdscr):
+    manager = CharacterManager()
+    characters = manager.get_characters()
+    screen_h, screen_w = stdscr.getmaxyx()
+    start_y = (screen_h // 2) - (10 // 2)
+    start_x = (screen_w // 2) - (35 // 2)
+    selected_index = 0
+    while True:
+        stdscr.clear()
+        stdscr.addstr(start_y - 2, start_x + 4, f"Choisissez votre personnage")
+        stdscr.refresh()
+        display_character_card(stdscr, characters[selected_index], start_y, start_x)
+        key = stdscr.getkey()
+        if key == "KEY_UP":
+            selected_index = (selected_index - 1) % len(characters)
+        elif key == "KEY_DOWN":
+            selected_index = (selected_index + 1) % len(characters)
+        elif key == "\n":
+            return characters[selected_index]
 
 
 def display_character_card(stdscr, player, y: int = 2, x: int = 2):

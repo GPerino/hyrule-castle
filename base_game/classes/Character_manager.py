@@ -19,7 +19,7 @@ class CharacterManager:
         self.boss = Boss("", 0, 0, 0, 0, 0)
 
     def get_characters(self):
-        with open("/base_game/data/characters.json") as f:
+        with open(BASE_DIR + "/data/characters.json") as f:
             data = json.load(f)
             for player in data:
                 self.characters_available.append(player)
