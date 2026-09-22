@@ -1,8 +1,9 @@
 from pick import pick
 
 from base_game.game import Game
+from base_game.menus.new_game_menu import NewGameMenu
 from base_game.menus.options_menu import OptionsMenu
-from base_game.menus.new_game_menu import show_menu
+
 
 class MainMenu:
     def __init__(self, audio):
@@ -13,10 +14,11 @@ class MainMenu:
         options_menu = OptionsMenu()
         while True:
             title = "=== Menu Principal ==="
-            options = ["Lancer une nouvelle partie","Continuer une partie", "Gestions des joueurs" "Options", "Quitter"]
+            options = ["Lancer une nouvelle partie", "Continuer une partie", "Gestions des joueurs" "Options",
+                       "Quitter"]
             _, index = pick(options, title, screen=stdscr)
             if index == 0:
-                show_menu(stdscr)
+                NewGameMenu.show_menu(stdscr)
             elif index == 1:
                 self.game.start(stdscr)
             elif index == 2:

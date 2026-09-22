@@ -184,19 +184,11 @@ def save_user(user: User):
     users = get_user_files()
     username = user.username
     played_games = user.played_games
-    nbfail = user.nbfail
-    nbwin = user.nbwin
-    greatest_score = user.greatest_score
     file_name = user.username + ".json"
     users.append(file_name)
     json_string = {
         "username": username,
-        "played_games": played_games,  # default value to 0
-        "nbfail": nbfail,  # default value to 0
-        "nbwin": nbwin,  # default value to 0
-        "greatest_score": greatest_score,  # default value to 0
     }
-
     file = open(file_name, "w")
     json.dump(json_string, file, indent=2)
     file.close()

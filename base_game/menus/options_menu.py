@@ -12,7 +12,7 @@ class OptionsMenu:
         if choice == 0:
             stdscr.clear()
             title = "Choisissez la difficulté"
-            options = ["Facile", "Normal", "Difficile", "legendaire"]
+            options = ["Facile", "Normal", "Hardcore"]
             level, choice = pick(options, title, screen=stdscr)
             stdscr.refresh()
             stdscr.addstr("Vous jouez maintenant en difficulté {}".format(level))
