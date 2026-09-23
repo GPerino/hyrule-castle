@@ -9,19 +9,13 @@ class SaveManager:
     def __init__(self):
         pass
 
-    def print_all_saves(self):
-        """
-        return all filename in saves.json
-        :return:
-        """
-        saves = []
-        for file in glob.glob(BASE_DIR + "/saves/*.json"):
-            saves.append(file)
-        for save in saves:
-            print(save.character.name)
-        return saves
-
     def save_game(self, game, name):
+        saves = [
+            file
+            for file in glob.glob(BASE_DIR + "/saves/*.json")
+        ]
+        if saves.count(BASE_DIR + f"/saves/{name}.json") > 0:
+            name = name + f"__{saves.count(name)+1}"
         file = open(BASE_DIR + "/saves/" + name + ".json", "w")
         content = game.to_dict()
         json.dump(content, file, indent=2)

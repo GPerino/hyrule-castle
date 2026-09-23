@@ -70,7 +70,7 @@ def show_intro(stdscr, lines=None, title=None, delay_ms=0):
 def choose_difficulty(stdscr):
     stdscr.clear()
     title = "Choisissez la difficulté"
-    options = ["Facile", "Normal", "Hardcore"]
+    options = ["Facile", "Normal", "Difficile"]
     level, _ = pick(options, title, screen=stdscr)
     return level
 
@@ -78,7 +78,7 @@ def choose_difficulty(stdscr):
 def choose_game_mode(stdscr):
     stdscr.clear()
     title = "Choisissez le mode de jeu"
-    options = ["Histoire", "Difficile", "Aléatoire"]
+    options = ["Histoire", "Difficile", "Aleatoire"]
     # @TODO Afficher détails des options
     mode, index = pick(options, title, screen=stdscr)
     return mode
@@ -110,8 +110,8 @@ def display_character_card(stdscr, character, y: int = 2, x: int = 2):
     h = 10
     draw_box(stdscr, y, x, h, w, character.name)
     stdscr.addstr(y + 2, x + 2, f"HP   : {hp_to_hearts(character.max_health)}  ({character.max_health})")
-    stdscr.addstr(y + 3, x + 2, f"STR  : {character.strength}")
-    stdscr.addstr(y + 4, x + 2, f"DEF  : {character.defense}")
+    stdscr.addstr(y + 3, x + 2, f"STR  : {character.str_}")
+    stdscr.addstr(y + 4, x + 2, f"DEF  : {character.def_}")
     stdscr.addstr(y + 5, x + 2, f"SPD  : {character.spd}")
     stdscr.addstr(y + 6, x + 2, f"LUCK : {character.luck}")
     stdscr.addstr(y + 8, x + 2, "↑↓ choisir   ENTER confirmer")

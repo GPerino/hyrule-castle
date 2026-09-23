@@ -3,19 +3,19 @@ class Character:
         self.name = name
         self.max_health = max_health
         self.hp = max_health if hp is None else hp
-        self.strength = str_
-        self.defense = def_
+        self.str_ = str_
+        self.def_ = def_
         self.spd = spd
         self.luck = luck
 
     def attack(self, target):
-        target.take_damage(self.strength)
+        target.take_damage(self.str_)
 
     def health_check(self):
         print("{} a {} points de vie restants".format(self.name, self.hp))
 
     def take_damage(self, damage):
-        final_damage = damage - self.defense
+        final_damage = damage - self.def_
         self.hp -= final_damage
 
     def reload_health(self):

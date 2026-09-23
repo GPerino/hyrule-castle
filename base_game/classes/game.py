@@ -1,34 +1,50 @@
-import time
+from datetime import datetime
 
 from base_game.classes.dungeon_manager import DungeonManager
 from base_game.classes.hero import Hero
-from base_game.classes.save_manager import SaveManager
 from base_game.classes.settings import GameSettings
 from base_game.utils import clear_screen, show_intro
 
 
 class Game:
-    def __init__(self, audio, mode: str, difficulty: str, hero: Hero):
+    def __init__(self, audio, mode: str, difficulty: str, hero: Hero, progression=None):
+        if progression is None:
+            progression = {
+                "dungeon": 1,
+                "room": 1
+            }
         self.mode = mode
         self.difficulty = difficulty
-        self.last_save = time.time()
-        self.settings = GameSettings()
+        self.last_save = datetime.now()
         self.hero = hero
+        self.progression = progression
+        self.settings = GameSettings()
         self.dungeon_manager = DungeonManager()
         self.audio = audio
         self.is_running = False
 
+    @classmethod
+    def from_dict(cls, data, hero, audio):
+        game = cls(
+            audio=audio,
+            mode=data["mode"],
+            difficulty=data["difficulty"],
+            hero=hero,
+            progression=data["progression"]
+        )
+        return game
+
     def to_dict(self):
         return {
             "metadata": {
-                "last_save": self.last_save
+                "last_save": self.last_save.strftime("%m/%d/%Y, %H:%M:%S")
             },
             "game": {
                 "mode": self.mode,
                 "difficulty": self.difficulty,
-                "progression": self.dungeon_manager.get_progression()
+                "progression": self.progression
             },
-            "character": self.hero.to_dict()
+            "hero": self.hero.to_dict()
         }
 
     def intro(self, stdscr):
@@ -51,17 +67,13 @@ class Game:
         self.audio.stop()
 
     def start(self, stdscr):
-        self.intro(stdscr)
         clear_screen(stdscr)
+        stdscr.addstr(2, 65, f"Détails de la partie")
         stdscr.addstr(4, 65, f"Vous incarnez {self.hero.name}")
-        stdscr.addstr(6, 65, f"Appuyer pour continuer")
+        stdscr.addstr(5, 65, f"Mode {self.mode}")
+        stdscr.addstr(6, 65, f"Difficulté {self.difficulty}")
+        stdscr.addstr(7, 65, f"Donjon {self.progression['dungeon']}")
+        stdscr.addstr(8, 65, f"Salle {self.progression['room']}")
+        stdscr.addstr(12, 65, f"Appuyer pour continuer")
         stdscr.refresh()
         stdscr.getkey()
-
-    def handle_exit(self, stdscr):
-        save_manager = SaveManager()
-        stdscr.addstr("\nSaving your progress...")
-        save_manager.save_game(self, "save_exit")
-        # @TODO: Ajouter une logique de sauvegarde
-        stdscr.addstr("Progress saved.")
-        stdscr.addstr("Goodbye, adventurer!")

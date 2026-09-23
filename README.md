@@ -21,11 +21,11 @@ $ python -m base_game.main
 ## Next Features
 - [x] Title screen
 - [x] Character creation
-- [ ] Options
+- [x] Options
+- [ ] Pause menu
+- [x] Load game
 - [ ] Music
 - [ ] Difficulty levels
-- [ ] Save / Load game
-- [ ] Handle user Exit
 - [ ] Inventory
 - [ ] Escape from the battle
 - [ ] Chest loot
