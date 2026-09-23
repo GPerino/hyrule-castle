@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Queen Gohma",
-    "hp": 250,
+    "max_health": 250,
     "str_": 16,
     "def_": 10,
     "spd": 6,
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "name": "King Dodongo",
-    "hp": 300,
+    "max_health": 300,
     "str_": 18,
     "def_": 10,
     "spd": 5,
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "name": "Barinade",
-    "hp": 300,
+    "max_health": 300,
     "str_": 20,
     "def_": 8,
     "spd": 8,
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "Phantom Ganon",
-    "hp": 300,
+    "max_health": 300,
     "str_": 18,
     "def_": 10,
     "spd": 7,
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "Volvagia",
-    "hp": 350,
+    "max_health": 350,
     "str_": 18,
     "def_": 10,
     "spd": 8,
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "name": "Morpha",
-    "hp": 350,
+    "max_health": 350,
     "str_": 17,
     "def_": 8,
     "spd": 7,
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "name": "Bongo Bongo",
-    "hp": 400,
+    "max_health": 400,
     "str_": 20,
     "def_": 9,
     "spd": 8,
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "name": "Twinrova",
-    "hp": 400,
+    "max_health": 400,
     "str_": 19,
     "def_": 10,
     "spd": 7,
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "name": "Ganondorf",
-    "hp": 450,
+    "max_health": 450,
     "str_": 22,
     "def_": 12,
     "spd": 6,

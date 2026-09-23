@@ -2,18 +2,16 @@ from .character import Character
 
 
 class Hero(Character):
-    def __init__(self, name, hp, str_, def_, spd, luck):
-        super().__init__(name, hp, str_, def_, spd, luck)
+    def __init__(self,  name, max_health, str_, def_, spd, luck, id=0):
+        super().__init__(name, max_health, str_, def_, spd, luck)
 
-    def self_heal(self):
-        """
-        The hero use heal power
-        Heal permit to recovers half max point
-        """
-        hp = self.max_health / 4
-        if self.hp + hp > self.max_health:
-            self.hp = self.max_health
-            int(self.hp)
-        else:
-            self.hp += hp
-            int(self.hp)
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "max_health": self.max_health,
+            "hp": self.hp,
+            "strength": self.strength,
+            "defense": self.defense,
+            "spd": self.spd,
+            "luck": self.luck
+        }

@@ -3,7 +3,7 @@ import time
 
 from base_game.classes.audio_manager import AudioManager
 from base_game.menus.main_menu import MainMenu
-from base_game.utils import display_ascii_art, handle_exit, typewriter_effect
+from base_game.utils import display_ascii_art, typewriter_effect
 
 
 def main():
@@ -31,7 +31,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        handle_exit()
+    main()

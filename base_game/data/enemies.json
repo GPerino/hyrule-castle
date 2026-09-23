@@ -56,7 +56,7 @@
   {
     "id": 7,
     "name": "Gohma Larva",
-    "hp": 45,
+    "max_health": 45,
     "str_": 10,
     "def_": 3,
     "spd": 9,
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "name": "Dodongo",
-    "hp": 100,
+    "max_health": 100,
     "str_": 16,
     "def_": 7,
     "spd": 4,
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "name": "Lizalfos",
-    "hp": 80,
+    "max_health": 80,
     "str_": 14,
     "def_": 5,
     "spd": 9,
@@ -83,7 +83,7 @@
   {
     "id": 10,
     "name": "Armos",
-    "hp": 90,
+    "max_health": 90,
     "str_": 15,
     "def_": 8,
     "spd": 6,
@@ -92,7 +92,7 @@
   {
     "id": 11,
     "name": "Stalfos",
-    "hp": 120,
+    "max_health": 120,
     "str_": 17,
     "def_": 7,
     "spd": 8,
@@ -101,7 +101,7 @@
   {
     "id": 12,
     "name": "Wolfos",
-    "hp": 90,
+    "max_health": 90,
     "str_": 15,
     "def_": 6,
     "spd": 10,
@@ -110,7 +110,7 @@
   {
     "id": 13,
     "name": "Anubis",
-    "hp": 100,
+    "max_health": 100,
     "str_": 14,
     "def_": 5,
     "spd": 7,
@@ -119,7 +119,7 @@
   {
     "id": 14,
     "name": "Torch Slug",
-    "hp": 100,
+    "max_health": 100,
     "str_": 15,
     "def_": 7,
     "spd": 4,
@@ -128,7 +128,7 @@
   {
     "id": 15,
     "name": "Flare Dancer",
-    "hp": 150,
+    "max_health": 150,
     "str_": 18,
     "def_": 8,
     "spd": 9,
@@ -137,7 +137,7 @@
   {
     "id": 16,
     "name": "Shell Blade",
-    "hp": 90,
+    "max_health": 90,
     "str_": 14,
     "def_": 7,
     "spd": 7,
@@ -146,7 +146,7 @@
   {
     "id": 17,
     "name": "Spike",
-    "hp": 80,
+    "max_health": 80,
     "str_": 15,
     "def_": 8,
     "spd": 6,
@@ -155,7 +155,7 @@
   {
     "id": 18,
     "name": "Dead Hand",
-    "hp": 160,
+    "max_health": 160,
     "str_": 18,
     "def_": 8,
     "spd": 3,
@@ -164,7 +164,7 @@
   {
     "id": 19,
     "name": "ReDead",
-    "hp": 120,
+    "max_health": 120,
     "str_": 16,
     "def_": 7,
     "spd": 3,
@@ -173,7 +173,7 @@
   {
     "id": 20,
     "name": "Beamos",
-    "hp": 100,
+    "max_health": 100,
     "str_": 17,
     "def_": 9,
     "spd": 2,
@@ -182,7 +182,7 @@
   {
     "id": 21,
     "name": "Like Like",
-    "hp": 130,
+    "max_health": 130,
     "str_": 15,
     "def_": 8,
     "spd": 4,
@@ -191,7 +191,7 @@
   {
     "id": 22,
     "name": "Iron Knuckle",
-    "hp": 220,
+    "max_health": 220,
     "str_": 25,
     "def_": 12,
     "spd": 3,

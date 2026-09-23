@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "last_save": "2026-09-22T02:18:00"
+  },
+  "game": {
+    "mode": "story",
+    "difficulty": "hard",
+    "progression": {
+      "dungeon": 1,
+      "room": 1
+    }
+  },
+  "character": {
+    "name": "Link",
+    "hp": 120,
+    "max_health": 120,
+    "strength": 20,
+    "defense": 12,
+    "spd": 11,
+    "luck": 10
+  }
+}

@@ -86,7 +86,7 @@ def choose_game_mode(stdscr):
 
 def choose_character(stdscr):
     manager = CharacterManager()
-    characters = manager.get_hero()
+    heroes = manager.get_heroes()
     screen_h, screen_w = stdscr.getmaxyx()
     start_y = (screen_h // 2) - (10 // 2)
     start_x = (screen_w // 2) - (35 // 2)
@@ -95,32 +95,25 @@ def choose_character(stdscr):
         stdscr.clear()
         stdscr.addstr(start_y - 2, start_x + 4, f"Choisissez votre personnage")
         stdscr.refresh()
-        display_character_card(stdscr, characters[selected_index], start_y, start_x)
+        display_character_card(stdscr, heroes[selected_index], start_y, start_x)
         key = stdscr.getkey()
         if key == "KEY_UP":
-            selected_index = (selected_index - 1) % len(characters)
+            selected_index = (selected_index - 1) % len(heroes)
         elif key == "KEY_DOWN":
-            selected_index = (selected_index + 1) % len(characters)
+            selected_index = (selected_index + 1) % len(heroes)
         elif key == "\n":
-            return characters[selected_index]
+            return heroes[selected_index]
 
 
 def display_character_card(stdscr, character, y: int = 2, x: int = 2):
     w = 35
     h = 10
-    name = character["name"] if isinstance(character, dict) else character.name
-    hp = character["hp"] if isinstance(character, dict) else character.hp
-    str_ = character["str_"] if isinstance(character, dict) else character.str_
-    def_ = character["def_"] if isinstance(character, dict) else character.def_
-    spd = character["spd"] if isinstance(character, dict) else character.spd
-    luck = character["luck"] if isinstance(character, dict) else character.luck
-
-    draw_box(stdscr, y, x, h, w, name)
-    stdscr.addstr(y + 2, x + 2, f"HP   : {hp_to_hearts(hp)}  ({hp})")
-    stdscr.addstr(y + 3, x + 2, f"STR  : {str_}")
-    stdscr.addstr(y + 4, x + 2, f"DEF  : {def_}")
-    stdscr.addstr(y + 5, x + 2, f"SPD  : {spd}")
-    stdscr.addstr(y + 6, x + 2, f"LUCK : {luck}")
+    draw_box(stdscr, y, x, h, w, character.name)
+    stdscr.addstr(y + 2, x + 2, f"HP   : {hp_to_hearts(character.max_health)}  ({character.max_health})")
+    stdscr.addstr(y + 3, x + 2, f"STR  : {character.strength}")
+    stdscr.addstr(y + 4, x + 2, f"DEF  : {character.defense}")
+    stdscr.addstr(y + 5, x + 2, f"SPD  : {character.spd}")
+    stdscr.addstr(y + 6, x + 2, f"LUCK : {character.luck}")
     stdscr.addstr(y + 8, x + 2, "↑↓ choisir   ENTER confirmer")
 
 
@@ -136,13 +129,6 @@ def draw_box(stdscr, y: int, x: int, h: int, w: int, title: str = ""):
     for i in range(1, h - 1):
         stdscr.addstr(y + i, x, "│" + " " * (w - 2) + "│")
     stdscr.addstr(y + h - 1, x, "└" + "─" * (w - 2) + "┘")
-
-
-def handle_exit():
-    print("\nSaving your progress...")
-    # @TODO: Ajouter une logique de sauvegarde
-    print("Progress saved.")
-    print("Goodbye, adventurer!")
 
 
 def clear_screen(stdscr):

@@ -11,3 +11,6 @@ class DungeonManager:
         with open(BASE_DIR + '/data/dungeons.json', 'r') as file:
             self.dungeons = json.load(file).get('dungeons')
         self.current_dungeon = None
+
+    def get_progression(self):
+        pass
