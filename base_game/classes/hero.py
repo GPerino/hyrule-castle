@@ -1,13 +1,13 @@
 from .Character import Character
 
 
-class Player(Character):
+class Hero(Character):
     def __init__(self, name, hp, str_, def_, spd, luck):
         super().__init__(name, hp, str_, def_, spd, luck)
 
     def self_heal(self):
         """
-        The player use heal power
+        The hero use heal power
         Heal permit to recovers half max point
         """
         hp = self.max_health / 4

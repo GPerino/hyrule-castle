@@ -7,11 +7,11 @@ from base_game.utils import clear_screen, show_intro, choose_character
 
 class Game:
 
-    def __init__(self, audio, mode, difficulty, player):
+    def __init__(self, audio, mode, difficulty, hero):
         self.mode = mode
         self.difficulty = difficulty
         self.settings = GameSettings()
-        self.player = player
+        self.hero = hero
         self.dungeon_manager = DungeonManager()
         self.audio = audio
         self.is_running = False
@@ -39,9 +39,9 @@ class Game:
     def start(self, stdscr):
         self.intro(stdscr)
         clear_screen(stdscr)
-        PlayerTuple = namedtuple("Player", "id, name, hp, str_, def_, spd, luck")
-        self.player = PlayerTuple(**self.player)
-        stdscr.addstr(4, 65, f"Vous incarnez {self.player.name}")
+        HeroTuple = namedtuple("Hero", "id, name, hp, str_, def_, spd, luck")
+        self.hero = HeroTuple(**self.hero)
+        stdscr.addstr(4, 65, f"Vous incarnez {self.hero.name}")
         stdscr.addstr(6, 65, f"Appuyer pour continuer")
         stdscr.refresh()
         stdscr.getkey()

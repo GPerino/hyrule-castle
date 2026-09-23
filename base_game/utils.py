@@ -11,17 +11,17 @@ from base_game.classes.Character_manager import CharacterManager
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-def check_special_characters(userinput: str):
+def check_special_characters(text: str):
     """
     Check if user's input is only an integer
-    :param userinput:
+    :param text:
     :return: bool
     """
     regex = re.compile("[@.€ç_!#$%^&*()<>' '?\"/\\|}{~:A-z]")
-    if regex.search(userinput) is not None:
+    if regex.search(text) is not None:
         print("Only number please")
         return False
-    elif userinput == "":
+    elif text == "":
         print("Type something ....")
         return False
     else:
@@ -41,7 +41,7 @@ def typewriter_effect(text):
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.1)  # Pause entre chaque lettre
+        time.sleep(0.1)
     print()
 
 
@@ -86,7 +86,7 @@ def choose_game_mode(stdscr):
 
 def choose_character(stdscr):
     manager = CharacterManager()
-    characters = manager.get_characters()
+    characters = manager.get_hero()
     screen_h, screen_w = stdscr.getmaxyx()
     start_y = (screen_h // 2) - (10 // 2)
     start_x = (screen_w // 2) - (35 // 2)
@@ -105,19 +105,17 @@ def choose_character(stdscr):
             return characters[selected_index]
 
 
-def display_character_card(stdscr, player, y: int = 2, x: int = 2):
+def display_character_card(stdscr, character, y: int = 2, x: int = 2):
     w = 35
     h = 10
-    draw_box(stdscr, y, x, h, w)
-    name = player["name"] if isinstance(player, dict) else player.name
-    hp = player["hp"] if isinstance(player, dict) else player.hp
-    str_ = player["str_"] if isinstance(player, dict) else player.str_
-    def_ = player["def_"] if isinstance(player, dict) else player.def_
-    spd = player["spd"] if isinstance(player, dict) else player.spd
-    luck = player["luck"] if isinstance(player, dict) else player.luck
+    name = character["name"] if isinstance(character, dict) else character.name
+    hp = character["hp"] if isinstance(character, dict) else character.hp
+    str_ = character["str_"] if isinstance(character, dict) else character.str_
+    def_ = character["def_"] if isinstance(character, dict) else character.def_
+    spd = character["spd"] if isinstance(character, dict) else character.spd
+    luck = character["luck"] if isinstance(character, dict) else character.luck
 
-    title = f" {name} "
-    stdscr.addstr(y, x + (w - len(title)) // 2, title)
+    draw_box(stdscr, y, x, h, w, name)
     stdscr.addstr(y + 2, x + 2, f"HP   : {hp_to_hearts(hp)}  ({hp})")
     stdscr.addstr(y + 3, x + 2, f"STR  : {str_}")
     stdscr.addstr(y + 4, x + 2, f"DEF  : {def_}")
@@ -132,8 +130,9 @@ def hp_to_hearts(hp: int, per_heart: int = 10, max_hearts: int = 15) -> str:
     return "♥" * hearts + "·" * (max_hearts - hearts)
 
 
-def draw_box(stdscr, y: int, x: int, h: int, w: int):
+def draw_box(stdscr, y: int, x: int, h: int, w: int, title: str = ""):
     stdscr.addstr(y, x, "┌" + "─" * (w - 2) + "┐")
+    stdscr.addstr(y, x + (w - len(title)) // 2, title)
     for i in range(1, h - 1):
         stdscr.addstr(y + i, x, "│" + " " * (w - 2) + "│")
     stdscr.addstr(y + h - 1, x, "└" + "─" * (w - 2) + "┘")
