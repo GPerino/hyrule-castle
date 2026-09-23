@@ -6,7 +6,7 @@ import time
 
 from pick import pick
 
-from base_game.classes.Character_manager import CharacterManager
+from base_game.classes.character_manager import CharacterManager
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

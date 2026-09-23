@@ -2,7 +2,7 @@ import glob
 import json
 import os
 
-from base_game.classes.User import User
+from base_game.classes.user import User
 from base_game.utils import check_special_characters
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def print_all_users():
     """
-    return all user in users.json
+    return all user in saves.json
     :return:
     """
     users = get_user_files()
@@ -25,7 +25,7 @@ def get_user_files():
     :return:array
     """
     users = []
-    for file in glob.glob(BASE_DIR + "/users/*.json"):
+    for file in glob.glob(BASE_DIR + "/saves/*.json"):
         users.append(file)
     return users
 
@@ -34,16 +34,22 @@ def new_user(username, stdscr):
     """
     Create a new user with class User
     :param username:
+    :param stdscr:
     :return: user:User
     """
+    if len(username) > 10:
+        stdscr.addstr(10, 4, f"username is too long ")
+        stdscr.refresh()
+        stdscr.getkey()
+        return None
     users = get_user_files()  # Get all username
-    if not users.__contains__(BASE_DIR + "/users/" + username +".json"):  # Check if username is free
+    if not users.__contains__(BASE_DIR + "/saves/" + username +".json"):  # Check if username is free
         user = User(username)  # Create user
         user.username = username
         save_user(user)  # Save user json file wit info
         return user
     else:
-        stdscr.addstr(4, 4, f"User {username} already exists. ")
+        stdscr.addstr(10, 4, f"User {username} already exists. ")
         stdscr.refresh()
         stdscr.getkey()
         return None
@@ -61,7 +67,7 @@ def save_user(user: User):
     json_string = {
         "username": username,
     }
-    file = open( BASE_DIR + "/users/" + file_name, "w")
+    file = open( BASE_DIR + "/saves/" + file_name, "w")
     json.dump(json_string, file, indent=2)
     file.close()
 
@@ -79,7 +85,7 @@ def delete_user(username: str):
 
 def users_menu():
     """
-    Display users' manager menu and execute function with user's choice  or return to main menu
+    Display saves' manager menu and execute function with user's choice  or return to main menu
     :return: int
     """
     manage_choice = 0
@@ -90,7 +96,7 @@ def users_menu():
             and manage_choice != 4
     ):
         manage_choice = input("""
-        [1] - Display users list      
+        [1] - Display saves list      
         [2] - Create a new user
         [3] - Delete a user
         [4] - return to main menu

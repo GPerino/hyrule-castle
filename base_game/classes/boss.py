@@ -1,6 +1,6 @@
-from .Character import Character
+from base_game.classes.character import Character
 
 
-class Enemy(Character):
+class Boss(Character):
     def __init__(self, name, hp, str_, def_, spd, luck):
         super().__init__(name, hp, str_, def_, spd, luck)

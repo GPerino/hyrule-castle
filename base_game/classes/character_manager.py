@@ -1,8 +1,8 @@
 import json
 import os
 
-from .Boss import Boss
-from .Enemy import Enemy
+from .boss import Boss
+from .enemy import Enemy
 from .hero import Hero
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

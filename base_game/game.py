@@ -1,7 +1,7 @@
 from collections import namedtuple
 
-from base_game.classes.Dungeon_manager import DungeonManager
-from base_game.classes.Settings import GameSettings
+from base_game.classes.dungeon_manager import DungeonManager
+from base_game.classes.settings import GameSettings
 from base_game.utils import clear_screen, show_intro, choose_character
 
 
