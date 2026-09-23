@@ -3,19 +3,19 @@
     "last_save": "2026-09-22T02:18:00"
   },
   "game": {
-    "mode": "story",
-    "difficulty": "hard",
+    "mode": "Histoire",
+    "difficulty": "Difficile",
     "progression": {
       "dungeon": 1,
-      "room": 1
+      "room": 2
     }
   },
-  "character": {
+  "hero": {
     "name": "Link",
     "hp": 120,
     "max_health": 120,
-    "strength": 20,
-    "defense": 12,
+    "str_": 20,
+    "def_": 12,
     "spd": 11,
     "luck": 10
   }
