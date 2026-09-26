@@ -26,3 +26,12 @@ class CharacterManager:
             for hero in data
         ]
         return self.heroes_available
+
+    def load_enemies(self):
+        with open(BASE_DIR + "/data/heroes.json") as f:
+            data = json.load(f)
+            enemies = [
+                Enemy(**enemies)
+                for enemies in data
+            ]
+        return enemies

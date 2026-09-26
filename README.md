@@ -10,7 +10,7 @@ The game is inspired by the Game Zelda Ocarina of time.
 ```bash
 $ git clone https://github.com/GPerino/hyrule-castle.git
 $ cd hyrule-castle
-$ pip3 install pick
+$ pip install -r requirements.txt
 ```
 
 ## Usage
