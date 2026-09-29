@@ -48,7 +48,7 @@ class Game:
         }
 
     def intro(self, stdscr):
-        self.audio.play("menu")
+        # self.audio.play("menu")
         lines = [
             "Bienvenue au château d'Hyrule.",
             "",
@@ -69,13 +69,6 @@ class Game:
     def start(self, stdscr):
         clear_screen(stdscr)
         self.browse_dungeons(stdscr)
-        # stdscr.addstr(2, 65, f"Détails de la partie")
-        # stdscr.addstr(4, 65, f"Vous incarnez {self.hero.name}")
-        # stdscr.addstr(5, 65, f"Mode {self.mode}")
-        # stdscr.addstr(6, 65, f"Difficulté {self.difficulty}")
-        # stdscr.addstr(7, 65, f"Donjon {self.progression['dungeon']}")
-        # stdscr.addstr(8, 65, f"Salle {self.progression['room']}")
-        # stdscr.addstr(12, 65, f"Appuyer pour continuer")
         stdscr.refresh()
         stdscr.getkey()
 
@@ -89,7 +82,7 @@ class Game:
     def browse_rooms(self, stdscr, dungeon):
         rooms = dungeon.get("rooms")
         for room in rooms:
-            self.dungeon_manager.launch_room(stdscr, dungeon, room)
+            self.dungeon_manager.launch_room(stdscr, dungeon, room.get("type"))
             stdscr.refresh()
             stdscr.getkey()
             clear_screen(stdscr)

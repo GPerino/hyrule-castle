@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Deku Baba",
-    "hp": 60,
+    "max_health": 60,
     "str_": 10,
     "def_": 4,
     "spd": 6,
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "name": "Deku Scrub",
-    "hp": 60,
+    "max_health": 60,
     "str_": 10,
     "def_": 4,
     "spd": 10,
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "name": "Skulltula",
-    "hp": 60,
+    "max_health": 60,
     "str_": 12,
     "def_": 4,
     "spd": 6,
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "Skullwalltula",
-    "hp": 55,
+    "max_health": 55,
     "str_": 11,
     "def_": 4,
     "spd": 7,
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "Keese",
-    "hp": 50,
+    "max_health": 50,
     "str_": 9,
     "def_": 3,
     "spd": 11,
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "name": "Fire Keese",
-    "hp": 60,
+    "max_health": 60,
     "str_": 12,
     "def_": 4,
     "spd": 11,
