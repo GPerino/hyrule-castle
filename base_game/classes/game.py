@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from base_game.classes.dungeon import Dungeon
 from base_game.classes.dungeon_manager import DungeonManager
 from base_game.classes.hero import Hero
 from base_game.classes.settings import GameSettings
@@ -75,12 +76,16 @@ class Game:
     def browse_dungeons(self, stdscr):
         dungeons = self.dungeon_manager.dungeons
         for dungeon in dungeons:
+            dungeon = Dungeon(**dungeon)
+            self.dungeon_manager.current_dungeon = dungeon
             self.browse_rooms(stdscr, dungeon)
             stdscr.refresh()
             stdscr.getkey()
 
-    def browse_rooms(self, stdscr, dungeon):
-        rooms = dungeon.get("rooms")
+    def browse_rooms(self, stdscr, dungeon: Dungeon):
+        rooms = dungeon.rooms
         for room in rooms:
-            self.dungeon_manager.launch_room(stdscr, dungeon, room.get("type"))
+            room_type = room.get("type")
+            self.dungeon_manager.launch_room(stdscr, dungeon, room_type)
             stdscr.getkey()
+            clear_screen(stdscr)
