@@ -83,6 +83,4 @@ class Game:
         rooms = dungeon.get("rooms")
         for room in rooms:
             self.dungeon_manager.launch_room(stdscr, dungeon, room.get("type"))
-            stdscr.refresh()
             stdscr.getkey()
-            clear_screen(stdscr)
