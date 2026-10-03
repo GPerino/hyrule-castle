@@ -66,7 +66,7 @@
       "rooms": [
         {"type": "start"},
         {"type": "enemy"},
-        {"type": "enemy", "trap": true},
+        {"type": "enemy"},
         {"type": "puzzle"},
         {"type": "chest"},
         {"type": "enemy", "count": 2},

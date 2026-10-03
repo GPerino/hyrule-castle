@@ -19,8 +19,8 @@ class DungeonManager:
             self.rooms = []
         self.current_dungeon = Dungeon(**self.dungeons[0])
 
-    def launch_room(self, stdscr, dungeon: Dungeon, room_type):
-        stdscr.addstr(1, 60, room_type)
+    def launch_room(self, stdscr, dungeon: Dungeon, room_type: Room):
+        stdscr.addstr(1, 60, room_type.value)
         if room_type is Room.ENEMY:
             enemy = self.choose_enemy(dungeon)
             stdscr.addstr(3, 60, enemy.name)
@@ -71,20 +71,3 @@ class DungeonManager:
             if load_boss.id == boss:
                 dungeon_boss = load_boss
         return dungeon_boss
-
-
-# if room === Room.START:
-#     func_1(room)
-#     func_2()
-#     func_3()
-# elif room === Room.ENEMY:
-#     func_1(room)
-#     choose_enemy()
-#     func_2()
-#     func_3()
-# etc...
-# func_1(room)
-# if room === Room.ENEMY:
-#     choose_enemy()
-# func_2()
-# func_3()

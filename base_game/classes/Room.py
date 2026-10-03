@@ -8,4 +8,5 @@ class Room(Enum):
     BOSS = "boss"
     PUZZLE = "puzzle"
     CHEST = "chest"
+    TRAP = "trap"
     MERCHANT = "merchant"
