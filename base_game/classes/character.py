@@ -1,6 +1,6 @@
 class Character:
-    def __init__(self, id: int, name: str, max_health: int, str_: int, def_: int, spd: int, luck: int, hp=None)-> None:
-        self.id = id
+    def __init__(self, identifier: int, name: str, max_health: int, str_: int, def_: int, spd: int, luck: int, hp=None)-> None:
+        self.id = identifier
         self.name = name
         self.max_health = max_health
         self.hp = max_health if hp is None else hp
