@@ -17,7 +17,7 @@ class Character:
         target.take_damage(self.str_)
 
     def health_check(self) -> None:
-        print("{} a {} points de vie restants".format(self.name, self.hp))
+        print(f"{self.name} a {self.hp} points de vie restants")
 
     def reload_health(self) -> None:
         self.hp = self.max_health
