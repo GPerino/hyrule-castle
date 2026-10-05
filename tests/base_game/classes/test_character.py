@@ -69,7 +69,7 @@ class TestCharacter:
         character.take_damage(50)
 
         # Assert
-        assert character.hp == 62 # character.hp (100) - (damage (50) - character.def (12))
+        assert character.hp == 62  # character.hp (100) - (damage (50) - character.def (12))
 
     def test_link_attacks_keese(self):
         # Arrange
@@ -98,4 +98,23 @@ class TestCharacter:
         link_character.attack(keese_character)
 
         # Assert
-        assert keese_character.hp == 33 # keese_character.hp (50) - (damage alias link_character.str_ (20) - keese_character.def_ (3))
+        assert keese_character.hp == 33  # keese_character.hp (50) - (damage alias link_character.str_ (20) - keese_character.def_ (3))
+
+    def test_reload_health(self):
+        # Arrange
+        character = Character(
+            1,
+            "Link",
+            120,
+            20,
+            12,
+            11,
+            10,
+            100
+        )
+
+        # Act
+        character.reload_health()
+
+        # Assert
+        assert character.hp == 120
