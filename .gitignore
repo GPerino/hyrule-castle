@@ -170,3 +170,4 @@ cython_debug/
 /.idea/dictionaries/project.xml
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/discord.xml
+/.idea/conventionalCommit.xml
