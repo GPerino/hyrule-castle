@@ -1,4 +1,4 @@
-import pytest
+import builtins
 
 from base_game.classes.character import Character
 
@@ -99,6 +99,27 @@ class TestCharacter:
 
         # Assert
         assert keese_character.hp == 33  # keese_character.hp (50) - (damage alias link_character.str_ (20) - keese_character.def_ (3))
+
+    def test_health_check(self, mocker):
+        # Arrange
+        spy_print = mocker.spy(builtins, 'print')
+        character = Character(
+            1,
+            "Link",
+            120,
+            20,
+            12,
+            11,
+            10,
+            100
+        )
+
+        # Act
+        character.health_check()
+
+        # Assert
+        assert spy_print.call_count == 1
+        spy_print.assert_called_once_with("Link a 100 points de vie restants")
 
     def test_reload_health(self):
         # Arrange
