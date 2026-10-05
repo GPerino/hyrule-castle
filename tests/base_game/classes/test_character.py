@@ -3,13 +3,6 @@ import pytest
 from base_game.classes.character import Character
 
 
-# "name": "Link",
-# "hp": 120,
-# "max_health": 120,
-# "str_": 20,
-# "def_": 12,
-# "spd": 11,
-# "luck": 10
 class TestCharacter:
     def test_init_keese(self):
         # Arrange
@@ -42,3 +35,36 @@ class TestCharacter:
         assert character.def_ == keese_def
         assert character.spd == keese_spd
         assert character.luck == keese_luck
+
+    def test_init_link(self):
+        # Arrange
+        link_id: int = 1
+        link_name: str = "Link"
+        link_max_health: int = 120
+        link_str: int = 20
+        link_def: int = 12
+        link_spd: int = 11
+        link_luck: int = 10
+        link_hp: int = 100
+
+        # Act
+        character = Character(
+            link_id,
+            link_name,
+            link_max_health,
+            link_str,
+            link_def,
+            link_spd,
+            link_luck,
+            link_hp
+        )
+
+        # Assert
+        assert character.id == link_id
+        assert character.name == link_name
+        assert character.max_health == link_max_health
+        assert character.hp == link_hp
+        assert character.str_ == link_str
+        assert character.def_ == link_def
+        assert character.spd == link_spd
+        assert character.luck == link_luck
