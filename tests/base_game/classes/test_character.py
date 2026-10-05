@@ -86,33 +86,33 @@ class TestCharacter:
         character.take_damage(50)
 
         # Assert
-        assert character.hp == 62 # character.hp (100) - damage (50) - character.def (12)
+        assert character.hp == 62 # character.hp (100) - (damage (50) - character.def (12))
 
-# def test_link_attacks_keese(self):
-#     # Arrange
-#     keese_character = Character(
-#         5,
-#         "Keese",
-#         50,
-#         9,
-#         3,
-#         11,
-#         5,
-#         None
-#     )
-#     link_character = Character(
-#         4,
-#         "Link",
-#         120,
-#         20,
-#         12,
-#         11,
-#         10,
-#         100
-#     )
-#
-#     # Act
-#     link_character.attack(keese_character)
-#
-#     # Assert
-#     assert keese_character.hp == 73 # keese_character.hp (100) - link_character.str_ (20) - keese_character.def_ (3)
+    def test_link_attacks_keese(self):
+        # Arrange
+        keese_character = Character(
+            5,
+            "Keese",
+            50,
+            9,
+            3,
+            11,
+            5,
+            None
+        )
+        link_character = Character(
+            4,
+            "Link",
+            120,
+            20,
+            12,
+            11,
+            10,
+            100
+        )
+
+        # Act
+        link_character.attack(keese_character)
+
+        # Assert
+        assert keese_character.hp == 33 # keese_character.hp (50) - (damage alias link_character.str_ (20) - keese_character.def_ (3))
