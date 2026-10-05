@@ -68,3 +68,32 @@ class TestCharacter:
         assert character.def_ == link_def
         assert character.spd == link_spd
         assert character.luck == link_luck
+
+    def test_link_attacks_keese(self):
+        # Arrange
+        keese_character = Character(
+            5,
+            "Keese",
+            50,
+            9,
+            3,
+            11,
+            5,
+            None
+        )
+        link_character = Character(
+            4,
+            "Link",
+            120,
+            20,
+            12,
+            11,
+            10,
+            100
+        )
+
+        # Act
+        link_character.attack(keese_character)
+
+        # Assert
+        assert keese_character.hp == 73 # keese_character.hp (100) - link_character.str_ (20) - keese_character.def_ (3)
