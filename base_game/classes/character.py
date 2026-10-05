@@ -1,6 +1,16 @@
 class Character:
-    def __init__(self,id,  name, max_health, str_, def_, spd, luck, hp=None):
-        self.id = id
+    def __init__(
+            self,
+            identifier: int,
+            name: str,
+            max_health: int,
+            str_: int,
+            def_: int,
+            spd: int,
+            luck: int,
+            hp=None
+    ) -> None:
+        self.id = identifier
         self.name = name
         self.max_health = max_health
         self.hp = max_health if hp is None else hp
@@ -9,15 +19,15 @@ class Character:
         self.spd = spd
         self.luck = luck
 
-    def attack(self, target):
-        target.take_damage(self.str_)
-
-    def health_check(self):
-        print("{} a {} points de vie restants".format(self.name, self.hp))
-
-    def take_damage(self, damage):
-        final_damage = damage - self.def_
+    def take_damage(self, damage: int) -> None:
+        final_damage: int = damage - self.def_
         self.hp -= final_damage
 
-    def reload_health(self):
+    def attack(self, target: Character) -> None:
+        target.take_damage(self.str_)
+
+    def health_check(self) -> None:
+        print(f"{self.name} a {self.hp} points de vie restants")
+
+    def reload_health(self) -> None:
         self.hp = self.max_health
