@@ -15,8 +15,8 @@ class CharacterManager:
         self.rarity_weights = [0, 50, 30, 15, 4, 1]
         self.hero = Hero(0, "", 0, 0, 0, 0, 0)
         self.heroes_available = []
-        self.enemy = Enemy("", 0, 0, 0, 0, 0, 0)
-        self.boss = Boss("", 0, 0, 0, 0, 0, 0)
+        self.enemy = Enemy(0, "", 0, 0, 0, 0, 0)
+        self.boss = Boss(0, "", 0, 0, 0, 0, 0)
 
     def get_heroes(self):
         with open(BASE_DIR + "/data/heroes.json") as f:

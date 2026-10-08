@@ -3,6 +3,7 @@ import os
 import re
 import sys
 import time
+from typing import cast
 
 from pick import pick
 
@@ -67,21 +68,21 @@ def show_intro(stdscr, lines=None, title=None, delay_ms=0):
     stdscr.getch()
 
 
-def choose_difficulty(stdscr):
+def choose_difficulty(stdscr) -> str:
     stdscr.clear()
     title = "Choisissez la difficulté"
     options = ["Facile", "Normal", "Difficile"]
     level, _ = pick(options, title, screen=stdscr)
-    return level
+    return cast(str, level)
 
 
-def choose_game_mode(stdscr):
+def choose_game_mode(stdscr) -> str:
     stdscr.clear()
     title = "Choisissez le mode de jeu"
     options = ["Histoire", "Difficile", "Aleatoire"]
     # @TODO Afficher détails des options
-    mode, index = pick(options, title, screen=stdscr)
-    return mode
+    mode, _ = pick(options, title, screen=stdscr)
+    return cast(str, mode)
 
 
 def choose_character(stdscr):

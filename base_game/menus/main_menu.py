@@ -8,6 +8,7 @@ from base_game.menus.options_menu import OptionsMenu
 class MainMenu:
     def __init__(self, audio):
         self.audio = audio
+
     def show(self, stdscr):
         options_menu = OptionsMenu()
         while True:

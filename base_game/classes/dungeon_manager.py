@@ -6,6 +6,7 @@ from base_game.classes.Room import Room
 from base_game.classes.character_manager import CharacterManager
 from base_game.classes.dungeon import Dungeon
 from base_game.classes.enemy import Enemy
+from base_game.classes.boss import Boss
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -65,6 +66,7 @@ class DungeonManager:
 
     def get_dungeon_boss(self, dungeon: Dungeon):
         boss = dungeon.boss
+        dungeon_boss = Boss(0, "", 0, 0, 0, 0, 0)
         manager = CharacterManager()
         all_bosses = manager.load_bosses()
         for load_boss in all_bosses:

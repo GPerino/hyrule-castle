@@ -15,8 +15,8 @@ class Game:
                 "dungeon": 1,
                 "room": 1
             }
-        self.mode = mode
-        self.difficulty = difficulty
+        self.mode:str = mode
+        self.difficulty:str = difficulty
         self.last_save = datetime.now()
         self.hero = hero
         self.progression = progression

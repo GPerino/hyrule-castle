@@ -1,6 +1,7 @@
 import glob
 import json
 import os
+from typing import cast
 
 from pick import pick
 
@@ -36,13 +37,13 @@ class LoadGameMenu:
             for save, _ in saves
         ]
 
-        selected, index = pick(
+        _, index = pick(
             options,
             "Choisissez une sauvegarde :",
             indicator="➜ ",
             screen=stdscr
         )
-
+        index = cast(int, index)
         save, file = saves[index]
 
         return save
@@ -52,6 +53,7 @@ class LoadGameMenu:
         save = self.choose_save_to_load(stdscr)
         game = self.load_game(save, stdscr)
         game.start(stdscr)
+
     def load_game(self, save, stdscr):
         game = Game(self.audio, save.game.mode, save.game.difficulty, save.game.hero, save.game.progression)
         return game
