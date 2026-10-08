@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "identifier": 1,
     "name": "Link",
     "max_health": 120,
     "str_": 20,
@@ -9,7 +9,7 @@
     "luck": 10
   },
   {
-    "id": 2,
+    "identifier": 2,
     "name": "Young Link",
     "max_health": 100,
     "str_": 16,
@@ -18,7 +18,7 @@
     "luck": 25
   },
   {
-    "id": 3,
+    "identifier": 3,
     "name": "Sheik",
     "max_health": 110,
     "str_": 18,
@@ -27,7 +27,7 @@
     "luck": 10
   },
   {
-    "id": 4,
+    "identifier": 4,
     "name": "Impa",
     "max_health": 130,
     "str_": 14,
@@ -36,7 +36,7 @@
     "luck": 10
   },
   {
-    "id": 5,
+    "identifier": 5,
     "name": "Hylia",
     "max_health": 150,
     "str_": 20,

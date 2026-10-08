@@ -19,7 +19,7 @@ class TestCharacter:
         )
 
         # Assert
-        assert character.id == 5
+        assert character.identifier == 5
         assert character.name == "Keese"
         assert character.max_health == 50
         assert character.hp == 50
@@ -43,7 +43,7 @@ class TestCharacter:
         )
 
         # Assert
-        assert character.id == 1
+        assert character.identifier == 1
         assert character.name == "Link"
         assert character.max_health == 120
         assert character.hp == 100

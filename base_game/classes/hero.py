@@ -2,8 +2,26 @@ from .character import Character
 
 
 class Hero(Character):
-    def __init__(self,  name, max_health, str_, def_, spd, luck, id=0, hp=0):
-        super().__init__(id, name, max_health, str_, def_, spd, luck)
+    def __init__(self,
+                 identifier: int,
+                 name: str,
+                 max_health: int,
+                 str_: int,
+                 def_: int,
+                 spd: int,
+                 luck: int,
+                 hp=None
+                 ) -> None:
+        super().__init__(
+            identifier,
+            name,
+            max_health,
+            str_,
+            def_,
+            spd,
+            luck,
+            hp,
+        )
 
     def to_dict(self):
         return {
