@@ -10,7 +10,7 @@ class Character:
             luck: int,
             hp=None
     ) -> None:
-        self.id = identifier
+        self.identifier = identifier
         self.name = name
         self.max_health = max_health
         self.hp = max_health if hp is None else hp

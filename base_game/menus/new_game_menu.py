@@ -4,10 +4,10 @@ from base_game.classes.save_manager import SaveManager
 from base_game.utils import choose_game_mode, choose_difficulty, choose_character
 
 
-class NewGameMenu():
+class NewGameMenu:
     def __init__(self, audio):
         self.audio = audio
-        self.hero = Hero("", 0, 0, 0, 0, 0, 0)
+        self.hero = Hero( 0, "", 0, 0, 0, 0, 0, 0)
 
     def show_menu(self, stdscr):
         stdscr.clear()

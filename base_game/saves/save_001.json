@@ -11,9 +11,10 @@
     }
   },
   "hero": {
+    "identifier": 1,
     "name": "Link",
-    "hp": 120,
     "max_health": 120,
+    "hp": 120,
     "str_": 20,
     "def_": 12,
     "spd": 11,

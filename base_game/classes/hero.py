@@ -23,9 +23,9 @@ class Hero(Character):
             hp,
         )
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         return {
-            "id": self.id,
+            "identifier": self.identifier,
             "name": self.name,
             "max_health": self.max_health,
             "hp": self.hp,
@@ -34,6 +34,7 @@ class Hero(Character):
             "spd": self.spd,
             "luck": self.luck
         }
+
     @classmethod
-    def from_dict(cls, data):
+    def from_dict(cls, data) -> Hero:
         return cls(**data)

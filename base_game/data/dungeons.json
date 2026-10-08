@@ -1,7 +1,7 @@
 {
   "dungeons": [
     {
-      "id": 1,
+      "identifier": 1,
       "name": "Inside the Great Deku Tree",
       "theme": "forest",
       "boss": 1,
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "id": 2,
+      "identifier": 2,
       "name": "Dodongo's Cavern",
       "theme": "fire",
       "boss": 2,
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "id": 3,
+      "identifier": 3,
       "name": "Inside Jabu-Jabu's Belly",
       "theme": "water",
       "boss": 3,
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "id": 4,
+      "identifier": 4,
       "name": "Forest Temple",
       "theme": "forest",
       "boss": 4,
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "id": 5,
+      "identifier": 5,
       "name": "Fire Temple",
       "theme": "fire",
       "boss": 5,
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "id": 6,
+      "identifier": 6,
       "name": "Water Temple",
       "theme": "water",
       "boss": 6,
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "id": 7,
+      "identifier": 7,
       "name": "Shadow Temple",
       "theme": "undead",
       "boss": 7,
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "id": 8,
+      "identifier": 8,
       "name": "Spirit Temple",
       "theme": "desert",
       "boss": 8,
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "id": 9,
+      "identifier": 9,
       "name": "Ganon's Castle",
       "theme": "final",
       "boss": 9,

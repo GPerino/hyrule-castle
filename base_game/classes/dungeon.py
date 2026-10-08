@@ -1,6 +1,6 @@
 class Dungeon:
-    def __init__(self, id, name, theme, boss, enemies, elites, rooms):
-        self.id = id
+    def __init__(self, identifier, name, theme, boss, enemies, elites, rooms):
+        self.identifier = identifier
         self.name = name
         self.theme = theme
         self.boss = boss
@@ -10,7 +10,7 @@ class Dungeon:
 
     def to_dict(self):
         return {
-            "id": self.id,
+            "identifier": self.identifier,
             "name": self.name,
             "theme": self.theme,
             "boss": self.boss,

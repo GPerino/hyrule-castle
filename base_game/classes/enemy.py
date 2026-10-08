@@ -2,12 +2,21 @@ from base_game.classes.character import Character
 
 
 class Enemy(Character):
-    def __init__(self,  name, max_health, str_, def_, spd, luck, id=0, hp=0):
-        super().__init__(id, name, max_health, str_, def_, spd, luck)
+    def __init__(
+            self,
+            identifier: int,
+            name: str,
+            max_health: int,
+            str_: int,
+            def_: int,
+            spd: int,
+            luck: int
+    ) -> None:
+        super().__init__(identifier, name, max_health, str_, def_, spd, luck)
 
-    def to_dict(self):
+    def to_dict(self)->dict:
         return {
-            "id": self.id,
+            "identifier": self.identifier,
             "name": self.name,
             "max_health": self.max_health,
             "hp": self.hp,
@@ -16,6 +25,7 @@ class Enemy(Character):
             "spd": self.spd,
             "luck": self.luck
         }
+
     @classmethod
-    def from_dict(cls, data):
+    def from_dict(cls, data)->Enemy:
         return cls(**data)

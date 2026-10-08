@@ -40,7 +40,7 @@ class DungeonManager:
         manager = CharacterManager()
         all_enemies = manager.load_enemies()
         for enemy in all_enemies:
-            if enemy.id in enemies:
+            if enemy.identifier in enemies:
                 dungeon_enemies.append(enemy)
         return dungeon_enemies
 
@@ -60,7 +60,7 @@ class DungeonManager:
         manager = CharacterManager()
         all_enemies = manager.load_enemies()
         for enemy in all_enemies:
-            if enemy.id in elites:
+            if enemy.identifier in elites:
                 dungeon_elites.append(enemy)
         return dungeon_elites
 
@@ -70,6 +70,6 @@ class DungeonManager:
         manager = CharacterManager()
         all_bosses = manager.load_bosses()
         for load_boss in all_bosses:
-            if load_boss.id == boss:
+            if load_boss.identifier == boss:
                 dungeon_boss = load_boss
         return dungeon_boss

@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "identifier": 1,
     "name": "Queen Gohma",
     "max_health": 250,
     "str_": 16,
@@ -9,7 +9,7 @@
     "luck": 0
   },
   {
-    "id": 2,
+    "identifier": 2,
     "name": "King Dodongo",
     "max_health": 300,
     "str_": 18,
@@ -18,7 +18,7 @@
     "luck": 0
   },
   {
-    "id": 3,
+    "identifier": 3,
     "name": "Barinade",
     "max_health": 300,
     "str_": 20,
@@ -27,7 +27,7 @@
     "luck": 0
   },
   {
-    "id": 4,
+    "identifier": 4,
     "name": "Phantom Ganon",
     "max_health": 300,
     "str_": 18,
@@ -36,7 +36,7 @@
     "luck": 0
   },
   {
-    "id": 5,
+    "identifier": 5,
     "name": "Volvagia",
     "max_health": 350,
     "str_": 18,
@@ -45,7 +45,7 @@
     "luck": 0
   },
   {
-    "id": 6,
+    "identifier": 6,
     "name": "Morpha",
     "max_health": 350,
     "str_": 17,
@@ -54,7 +54,7 @@
     "luck": 0
   },
   {
-    "id": 7,
+    "identifier": 7,
     "name": "Bongo Bongo",
     "max_health": 400,
     "str_": 20,
@@ -63,7 +63,7 @@
     "luck": 0
   },
   {
-    "id": 8,
+    "identifier": 8,
     "name": "Twinrova",
     "max_health": 400,
     "str_": 19,
@@ -72,7 +72,7 @@
     "luck": 0
   },
   {
-    "id": 9,
+    "identifier": 9,
     "name": "Ganondorf",
     "max_health": 450,
     "str_": 22,

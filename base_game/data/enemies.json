@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "identifier": 1,
     "name": "Deku Baba",
     "max_health": 60,
     "str_": 10,
@@ -9,7 +9,7 @@
     "luck": 5
   },
   {
-    "id": 2,
+    "identifier": 2,
     "name": "Deku Scrub",
     "max_health": 60,
     "str_": 10,
@@ -18,7 +18,7 @@
     "luck": 5
   },
   {
-    "id": 3,
+    "identifier": 3,
     "name": "Skulltula",
     "max_health": 60,
     "str_": 12,
@@ -27,7 +27,7 @@
     "luck": 5
   },
   {
-    "id": 4,
+    "identifier": 4,
     "name": "Skullwalltula",
     "max_health": 55,
     "str_": 11,
@@ -36,7 +36,7 @@
     "luck": 5
   },
   {
-    "id": 5,
+    "identifier": 5,
     "name": "Keese",
     "max_health": 50,
     "str_": 9,
@@ -45,7 +45,7 @@
     "luck": 5
   },
   {
-    "id": 6,
+    "identifier": 6,
     "name": "Fire Keese",
     "max_health": 60,
     "str_": 12,
@@ -54,7 +54,7 @@
     "luck": 5
   },
   {
-    "id": 7,
+    "identifier": 7,
     "name": "Gohma Larva",
     "max_health": 45,
     "str_": 10,
@@ -63,7 +63,7 @@
     "luck": 5
   },
   {
-    "id": 8,
+    "identifier": 8,
     "name": "Dodongo",
     "max_health": 100,
     "str_": 16,
@@ -72,7 +72,7 @@
     "luck": 5
   },
   {
-    "id": 9,
+    "identifier": 9,
     "name": "Lizalfos",
     "max_health": 80,
     "str_": 14,
@@ -81,7 +81,7 @@
     "luck": 5
   },
   {
-    "id": 10,
+    "identifier": 10,
     "name": "Armos",
     "max_health": 90,
     "str_": 15,
@@ -90,7 +90,7 @@
     "luck": 5
   },
   {
-    "id": 11,
+    "identifier": 11,
     "name": "Stalfos",
     "max_health": 120,
     "str_": 17,
@@ -99,7 +99,7 @@
     "luck": 5
   },
   {
-    "id": 12,
+    "identifier": 12,
     "name": "Wolfos",
     "max_health": 90,
     "str_": 15,
@@ -108,7 +108,7 @@
     "luck": 5
   },
   {
-    "id": 13,
+    "identifier": 13,
     "name": "Anubis",
     "max_health": 100,
     "str_": 14,
@@ -117,7 +117,7 @@
     "luck": 5
   },
   {
-    "id": 14,
+    "identifier": 14,
     "name": "Torch Slug",
     "max_health": 100,
     "str_": 15,
@@ -126,7 +126,7 @@
     "luck": 5
   },
   {
-    "id": 15,
+    "identifier": 15,
     "name": "Flare Dancer",
     "max_health": 150,
     "str_": 18,
@@ -135,7 +135,7 @@
     "luck": 5
   },
   {
-    "id": 16,
+    "identifier": 16,
     "name": "Shell Blade",
     "max_health": 90,
     "str_": 14,
@@ -144,7 +144,7 @@
     "luck": 5
   },
   {
-    "id": 17,
+    "identifier": 17,
     "name": "Spike",
     "max_health": 80,
     "str_": 15,
@@ -153,7 +153,7 @@
     "luck": 5
   },
   {
-    "id": 18,
+    "identifier": 18,
     "name": "Dead Hand",
     "max_health": 160,
     "str_": 18,
@@ -162,7 +162,7 @@
     "luck": 5
   },
   {
-    "id": 19,
+    "identifier": 19,
     "name": "ReDead",
     "max_health": 120,
     "str_": 16,
@@ -171,7 +171,7 @@
     "luck": 5
   },
   {
-    "id": 20,
+    "identifier": 20,
     "name": "Beamos",
     "max_health": 100,
     "str_": 17,
@@ -180,7 +180,7 @@
     "luck": 5
   },
   {
-    "id": 21,
+    "identifier": 21,
     "name": "Like Like",
     "max_health": 130,
     "str_": 15,
@@ -189,7 +189,7 @@
     "luck": 5
   },
   {
-    "id": 22,
+    "identifier": 22,
     "name": "Iron Knuckle",
     "max_health": 220,
     "str_": 25,
